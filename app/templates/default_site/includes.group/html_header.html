@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie ie6" dir="ltr" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="ie ie7" dir="ltr" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="ie ie8" dir="ltr" lang="en-US"> <![endif]-->
+<!--[if IE 9]>    <html class="ie ie9" dir="ltr" lang="en-US"> <![endif]-->
+<!--[if IE 10]>   <html class="ie ie10" dir="ltr" lang="en-US"> <![endif]-->
+<!--[if !IE]> --> <html dir="ltr" lang="en-US"> <![endif]-->
+<head>
+
+		<title>
+			{exp:channel:entries channel="writing" limit="1" disable="pagination|member_data|custom_fields|category_fields|categories"}
+				{if segment_3 != ""} {title} - {channel} |{/if} {site_name}
+
+			{/exp:channel:entries}
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		{exp:seo_lite url_title="{segment_3}"}
+
+		{exp:channel:entries channel="blog" limit="1" disable="pagination|member_data|category_fields|categories"}
+	    <meta name="description" content="{if segment_3 != ""}{blog_meta_description}{/if}" />
+		<meta name="keywords" content="{if segment_3 != ""}{categories} {category_name}, {/categories} {blog_meta_description}{/if}" />
+		{/exp:channel:entries}
+		<meta name="author" content="Juliano Moreira Dasilva" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="app/assets/css/foundation.min.css" />
+		<link rel="stylesheet" type="text/css" href="app/assets/css/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="app/assets/css/master.css" />
+
+		<!-- scripts (if possible place these scripts at the bottom) -->
+		<!--[if lte IE 8]>
+			<script src="/assets/js/respond.min.js"></script>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!--[if gte IE 9]>
+		  <style type="text/css">
+		    .gradient {
+		       filter: none;
+		    }
+		  </style>
+		<![endif]-->
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="/assets/css/ie.css" />
+		<![endif]-->
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		{typekit}
+		{grunticon}
+
+
+</head>
+<body class="">

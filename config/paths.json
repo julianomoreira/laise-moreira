@@ -1,0 +1,17 @@
+{
+  "app": {
+    "node": "./node_modules/",
+    "bower": "./bower_components/",
+    "tmp": "./tmp/"
+  },
+  "dist": {
+    "base": "./dist/",
+    "css": "./dist/css/",
+    "data": "./dist/data/",
+    "yuidocs": "./dist/jsdocs/",
+    "fonts": "./dist/fonts/",
+    "img": "./dist/img/",
+    "js": "./dist/js/",
+    "patterns": "./dist/patterns/"
+  }
+}
