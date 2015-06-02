@@ -1,4 +1,91 @@
 body {
-  border: 10px solid red;
-  color: black;
+  font-size: 100%;
+  font-family: $adelle-sans;
+}
+.l-container {
+  border: 1px solid #c1c1c1;
+}
+.header {
+  border-top: 4px solid #818452;
+  width: 100%;
+  height: 63px;
+}
+.logo {
+  float: left;
+  margin: 10px 0 0 15px;
+  padding: 0;
+}
+.phone {
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px 10px 0 0;
+  padding: 0;
+  > a:link {
+    color: #5E6985;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  > a:hover {
+    text-decoration: underline;
+  }
+}
+
+.header-btn {
+  float: right;
+  margin: 8px 10px 0 0;
+}
+.heroBox {
+  width: 100%;
+  height: 606px;
+  max-height: 606px;
+
+}
+.hero {
+  width: 100%;
+  height: 100%;
+  background: url(../images/food-healthy-man-person.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border: 1px solid #818452;
+  border-width: 1px 0;
+  padding: 40px;
+}
+.introMessage {
+  font-size: 72px;
+  line-height: 90px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+.learnMore {
+  font: normal 28px $kepler;
+  color: #fff;
+  text-align: center;
+}
+
+.newsletter {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.laiseText {
+  background-color: #7D7F18;
+  height: 338px;
+}
+.laisePicture {
+  background-color: #252E4A;
+  height: 338px;
+  background: url(../images/laise-picture.jpg) no-repeat 0 0;
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+}
+.helpYouPara {
+  font: normal 24px $kepler;
+  text-align: center;
+  color: #4A4A4A;
+  padding: 1rem 2rem;
 }
