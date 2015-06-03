@@ -1,0 +1,15 @@
+/*******************************************************************************
+ * Filename     :     Functions
+ * Author       :     Juju
+ * Description  :     Sass functions available for this site
+ ******************************************************************************/
+
+@function em($target, $context: 16) {
+  @return ($target / $context) * 1em;
+}
+@function black($opacity){
+  @return rgba(0,0,0,$opacity)
+}
+@function white($opacity){
+  @return rgba(255,255,255,$opacity)
+}

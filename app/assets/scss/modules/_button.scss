@@ -4,26 +4,44 @@
  * Description  :     Buttons available for this site
  ******************************************************************************/
 
-.btnOutline {
-    background-color: transparent;
-    font: 300 14px $adelle-sans;
-    color: #000;
-    border: 3px solid #000;
-    padding: 5px 1em;
-    margin: 0;
-    width: auto;
-    display: inline-block;
-    text-align: center;
-    border-radius: 4px;
-    height: 40px;
-    line-height: 24px;
+.btn {
+  background-color: transparent;
+  font: 300 14px $adelle-sans;
+  color: inherit;
+  padding: 5px 1em;
+  margin: 0;
+  width: auto;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  height: 40px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.btn-purple {
+  background-color: #5E6985;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+}
 
+// Button width
+
+.btn-full {
+  width: 100%;
+
+}
+
+// Outline style
+
+.btn-outline {
+  border: 3px solid #000;
+  background: transparent;
 }
 .btn-outline:hover {
   color: #000; // Need to figure out why !important
   /* border-color: black(1); */
 }
-
 .btn-outline:link {
   text-decoration: none;
   /* color: black(.5); */
@@ -38,7 +56,7 @@
 /*   color: black(.5);
 border-color: black(.5); */
 }
-.btnOutline-green {
+.btn-outline-green {
   border-color: #818452;
   color: #818452;
 }
