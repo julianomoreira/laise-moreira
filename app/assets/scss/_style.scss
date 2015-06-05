@@ -67,7 +67,7 @@ body {
   text-align: center;
 }
 .newsletter {
-  max-width: 600px;
+  max-width: 60%;
   margin: 0 auto;
   padding: 0 0 1em 0;
   > p {
@@ -77,7 +77,7 @@ body {
   }
 }
 .newsletter--signup {
-  width: 520px;
+  width: 93%;
   margin: 0 auto;
 }
 .laiseText {
@@ -175,4 +175,97 @@ body {
   color: #fff;
   font-size: em(14);
   line-height: 23px;
+}
+
+// Overlay Contact Form
+.overlayBackground {
+  background-color: rgba(0,0,0,.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+	opacity: 0;
+	visibility: hidden;
+  @include transition(all .25s ease-in-out 0s);
+}
+.overlayContactForm {
+  width: 60%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  background-color: #fff;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin-left: -30%;
+  border-radius: 4px;
+
+  //box-shadow: 0px 0px 1rem rgba(0,0,0,.5)
+  /* z-index: 10; */
+  @include transform(translateY(-20px));
+  @include transition(transform .15s ease-in-out 0s, opacity .15s ease-in-out 0s, visibility .15s ease-in-out 0s);
+}
+.overlay-is-visible {
+  visibility: visible;
+  opacity: 1;
+  .overlayContactForm {
+    opacity: 1;
+    visibility: visible;
+    @include transform(translateY(0px));
+  /* @include transition(transform .25s ease-in-out 0s, opacity .25s ease-in-out 0s); */
+  }
+
+}
+.formTitle {
+  width: 75%;
+  margin: 1rem auto;
+  font-weight: normal;
+  text-align: center;
+}
+.icon-close-x {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.formText {
+  margin: 0;
+  padding: 0 2rem 1rem 2rem;
+  li {
+    list-style: none;
+  }
+}
+.formText .textLabel {
+  display: block;
+  margin: 0;
+  margin: 0 0 .25rem 0;
+}
+.formText--textBox {
+  width: 50%;
+  float: left;
+  margin: 0;
+  /* border: 1px solid red; */
+  padding: 0 .5rem;
+  margin: 0 0 1rem 0;
+}
+.formText--textarea {
+  padding: 0 .5rem;
+  margin: 2rem 0 1rem 0;
+  clear: both;
+}
+.genericTextarea-fullWidth {
+  width: 100%;
+}
+.btn-form {
+  width: 100%;
+}
+
+// input Error
+
+.formText .inputError {
+  font-weight: normal;
+  color: red;
+  font-size: em(14);
 }

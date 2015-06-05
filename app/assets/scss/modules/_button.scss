@@ -24,7 +24,6 @@
   color: #fff;
   border: none;
 }
-
 // Button width
 
 .btn-full {
@@ -59,4 +58,8 @@ border-color: black(.5); */
 .btn-outline-green {
   border-color: #818452;
   color: #818452;
+}
+.btn-outline-green:hover {
+  background-color: #818452;
+  color: #fff;
 }

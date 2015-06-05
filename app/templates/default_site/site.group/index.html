@@ -2,76 +2,79 @@
 
 <div class="l-container">
 
-<div class="contactForm">
-  <h3>Hi! I’m super excited you’re getting in touch with me.
-Fill out the fields below (it won’t take long) and submit. </h3>
+<div class="overlayBackground overlay-is-visible">
+<div class="overlayContactForm">
+  <h3 class="formTitle">Hello! Thanks for taking the time to contact to me!
+Fill out the fields below and hit submit. I'll respond to you as soon as I can. </h3>
+  <span class="icon-close-x fa fa-2x fa-times"></span>
 
   {exp:freeform:form
   form_name="contact_me"
-  required="first_name|last_name|email|company|message"
-  return="contact/thank-you"
+  required="first_name|last_name|email|user_message"
   recipients="no"
   inline_errors="yes"
+  return="ajax/success"
   ajax="yes"
   admin_notify="laise79@gmail.com"
   notify_admin="yes"
   admin_notification_template="contact_form"
+  form:id="contact-form"
   }
 
-  <p class="inputOption">
-  <label>{freeform:label:first_name}</label>
-  {freeform:field:first_name}
+  <ul class="formText clearfix">
+  <li class="formText--textBox">
+  <label class="textLabel">{freeform:label:first_name}</label>
+  {freeform:field:first_name attr:class="inputText inputText-fullWidth"}
   {if freeform:error:first_name}
       <strong class="inputError">{freeform:error:first_name}</strong>
   {/if}
-  </p>
-  <p class="inputOption">
-  <label>{freeform:label:last_name}</label>
-  {freeform:field:last_name}
+  </li>
+  <li class="formText--textBox">
+  <label class="textLabel">{freeform:label:last_name}</label>
+  {freeform:field:last_name attr:class="inputText inputText-fullWidth"}
   {if freeform:error:last_name}
       <strong class="inputError">{freeform:error:last_name}</strong>
   {/if}
-  </p>
+  </li>
 
-  <p class="inputOption">
-  <label>{freeform:label:email}</label>
-  {freeform:field:email}
+  <li class="formText--textBox">
+  <label class="textLabel">{freeform:label:email}</label>
+  {freeform:field:email attr:class="inputText inputText-fullWidth"}
   {if freeform:error:email}
       <strong class="inputError">{freeform:error:email}</strong>
   {/if}
-  </p>
+  </li>
 
 
-  <p class="inputOption">
-  <label>{freeform:label:company}</label>
-  {freeform:field:company}
+  <li class="formText--textBox">
+  <label class="textLabel">{freeform:label:company}</label>
+  {freeform:field:company attr:class="inputText inputText-fullWidth"}
   {if freeform:error:company}
       <strong class="inputError">{freeform:error:company}</strong>
   {/if}
-  </p>
+  </li>
 
-  <p class="inputOption">
-  <label>{freeform:label:user_message}</label><br />
-  {freeform:field:user_message}
+  <li class="formText--textarea">
+  <label class="textLabel">{freeform:label:user_message}</label>
+  {freeform:field:user_message attr:class="inputTextarea inputTextarea-fullWidth"}
   {if freeform:error:user_message}
       <strong class="inputError">{freeform:error:user_message}</strong>
   {/if}
-  </p>
+  </li>
 
-  <p>{freeform:submit}</p>
+  <li class="formText--button">{freeform:submit attr:class="btn btn-purple btn-form"}</li>
+</ul>
+<div id="form-response"></div>
 
   {/exp:freeform:form}
 
-
-
-
-
+</div>
 </div>
 
 <div class="row">
 <div class="header clearfix">
   <h1 class="icon-logo-vitti logo" style="width: 200px; height: 36px;" ></h1>
-  <a href="#" class="btn btn-outline btn-outline-green header-btn">contact me now</a>
+  <a href="#" class="btn btn-outline btn-outline-green header-btn overlay-trigger">contact me now</a>
   <p class="phone"><span class="icon-icon-phone" style="width: 24px; height: 21px; display: inline-block; vertical-align: -5px;" ></span> <a href="tel:+13174562564">612.222.2324</a></p>
 </div>
 </div>
@@ -90,8 +93,8 @@ Fill out the fields below (it won’t take long) and submit. </h3>
   <p>Sign up to receive a monthly newsletter with news and updates
  about the industry of grapes, agriculture, and technology.</p>
   <div class="newsletter--signup">
-     <label><input class="" type="text" placeholder="enter your name"></label>
-     <label><input class="" type="text" placeholder="enter your email"></label>
+     <label><input class="inputText" type="text" placeholder="enter your name"></label>
+     <label><input class="inputText" type="text" placeholder="enter your email"></label>
      <button class="btn btn-purple">sign me up!</button>
   </div>
 </div>
@@ -164,7 +167,7 @@ I’m here to help your farm!</h3>
   <h3>Let’s connect! I’d love to work with you too!</h3>
   <div class="large-6 medium-6 columns">
   <p class="contactSignUpBox--text">Integer porta sollicitudin odio nec molestie. Suspendisse fringilla risus neque, eget dapibus erat fringilla vitae. Aenean imperdiet neque ac nibh luctus vulputate. Fusce sem ex, luctus quis vulputate eget, varius vel nibh. Duis vel sagittis arcu. </p>
-  <button class="btn btn-purple btn-full">contact me now</button>
+  <button class="btn btn-purple btn-full overlay-trigger">contact me now</button>
   </div>
   <div class="large-6 medium-6 columns">
     <p class="contactSignUpBox--text">Integer porta sollicitudin odio nec molestie. Suspendisse fringilla risus neque, eget dapibus erat fringilla vitae. Aenean imperdiet neque ac nibh luctus vulputate. Fusce sem ex, luctus quis vulputate eget, varius vel nibh. Duis vel sagittis arcu. </p>
