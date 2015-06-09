@@ -14,8 +14,7 @@ Fill out the fields below and hit submit. I'll respond to you as soon as I can. 
   recipients="no"
   inline_errors="yes"
   return="ajax/success"
-  ajax="yes"
-  admin_notify="laise79@gmail.com"
+  admin_notify="laise79@gmail.com|julianodasilva@gmail.com"
   notify_admin="yes"
   admin_notification_template="contact_form"
   form:id="contact-form"
@@ -65,6 +64,7 @@ Fill out the fields below and hit submit. I'll respond to you as soon as I can. 
   <li class="formText--button">{freeform:submit attr:class="btn btn-purple btn-form"}</li>
 </ul>
 <div id="form-response"></div>
+<div class="form-error-holder"></div>
 
   {/exp:freeform:form}
 
@@ -83,7 +83,10 @@ Fill out the fields below and hit submit. I'll respond to you as soon as I can. 
 <div class="heroBox">
   <div class="hero">
     <h1 class="introMessage">I help farmers grow  sustainable  varieties of delicious grapes</h1>
-    <p class="learnMore">learn more</p>
+    <p class="learnMore">
+      learn more
+      <span class="fa fa-1x fa-arrow-down"></span>
+    </p>
   </div>
 </div>
 </div>
@@ -93,21 +96,27 @@ Fill out the fields below and hit submit. I'll respond to you as soon as I can. 
   <p>Sign up to receive a monthly newsletter with news and updates
  about the industry of grapes, agriculture, and technology.</p>
   <div class="newsletter--signup">
-     <label><input class="inputText" type="text" placeholder="enter your name"></label>
-     <label><input class="inputText" type="text" placeholder="enter your email"></label>
-     <button class="btn btn-purple">sign me up!</button>
+  <form action="//julianomoreira.us1.list-manage.com/subscribe/post?u=ef9a24d01362c4c74d938c860&amp;id=6c00829c54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <input type="text" value="" name="FNAME" class="inputText inputText-fName" placeholder="first name" id="mce-FNAME">
+    <input type="text" value="" name="LNAME" class="inputText inputText-lName" placeholder="last name" id="mce-LNAME">
+    <input type="email" value="" name="EMAIL" class="inputText inputText-email" placeholder="enter your email"id="mce-EMAIL">
+    <input type="submit" value="sign me up!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-purple">
+  </form>
   </div>
 </div>
 </div>
 
 <div class="row">
-  <div class="large-6 medium-6 column laiseText">
+  <div class="large-6 medium-6 column laiseText featuredImg">
     <h3>Hi, I’m Laise Moreira. <br />
 I’m here to help your farm!</h3>
     <p>I am an independent grape consultant and I love it! Being a consultant allows me to offer advice that is based on own opinion and judgement, backed up by research and years of experience on the field. I have an large network that allows me to stay up to date with the latest developments in the industry.</p>
   </div>
-  <div class="large-6 medium-6 column laisePicture">
-
+  <div class="large-6 medium-6 column featuredImg featuredImgLaise">
+    <div class="featuredImgLaise--signature">
+      <h3>Laise Moreira</h3>
+      <p>Agronomist Engineer, Master of Science in Irrigated Horticulture</p>
+    </div>
   </div>
 </div>
 
@@ -116,6 +125,32 @@ I’m here to help your farm!</h3>
   I can help you increase your selection of fruits, reach more markets, divulge your farm,
  develop long-lasting relationships and produce sustainable products.
 </div>
+</div>
+
+<div class="row">
+  <div class="large-6 medium-6 column featuredImg featuredImg-one">
+    <div class="featuredImgBox">
+      <p class="featuredImgBox--text">I am an independent grape consultant and I love it! Being a consultant allows me to offer advice that is based on own opinion and judgement, backed up by research and years of experience on the field. I have an large network that allows me to stay up to date with the latest developments in the industry.</p>
+    </div>
+  </div>
+  <div class="large-6 medium-6 column featuredImg featuredImg-two">
+    <div class="featuredImgBox">
+      <p class="featuredImgBox--text">I am an independent grape consultant and I love it! Being a consultant allows me to offer advice that is based on own opinion and judgement, backed up by research and years of experience on the field. I have an large network that allows me to stay up to date with the latest developments in the industry.</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 medium-6 column featuredImg featuredImg-one">
+    <div class="featuredImgBox">
+      <p class="featuredImgBox--text">I am an independent grape consultant and I love it! Being a consultant allows me to offer advice that is based on own opinion and judgement, backed up by research and years of experience on the field. I have an large network that allows me to stay up to date with the latest developments in the industry.</p>
+    </div>
+  </div>
+  <div class="large-6 medium-6 column featuredImg featuredImg-one">
+    <div class="featuredImgBox">
+      <p class="featuredImgBox--text">I am an independent grape consultant and I love it! Being a consultant allows me to offer advice that is based on own opinion and judgement, backed up by research and years of experience on the field. I have an large network that allows me to stay up to date with the latest developments in the industry.</p>
+    </div>
+  </div>
 </div>
 
 <div class="row">

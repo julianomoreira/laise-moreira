@@ -18,7 +18,7 @@
 		{exp:seo_lite url_title="{segment_3}"}
 
 		{exp:channel:entries channel="blog" limit="1" disable="pagination|member_data|category_fields|categories"}
-	    <meta name="description" content="{if segment_3 != ""}{blog_meta_description}{/if}" />
+	  <meta name="description" content="{if segment_3 != ""}{blog_meta_description}{/if}" />
 		<meta name="keywords" content="{if segment_3 != ""}{categories} {category_name}, {/categories} {blog_meta_description}{/if}" />
 		{/exp:channel:entries}
 		<meta name="author" content="Juliano Moreira Dasilva" />
@@ -49,8 +49,19 @@
 		<![endif]-->
 
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="app/assets/js/jquery.form.min.js"></script>
 		{typekit}
 		{grunticon}
+		<script>
+		var animated = function(){
+			$('body').addClass('animated');
+		}
+		var animated2nd = function(){
+			$('body').addClass('animated2nd');
+		}
+		setTimeout(animated, 1000);
+		setTimeout(animated2nd, 2000);
+		</script>
 
 
 </head>

@@ -5,7 +5,7 @@
  ******************************************************************************/
 
 label {
-  margin: 0 .45rem;
+  margin: 0 .25rem;
 }
 .inputText {
   height: 40px;
@@ -28,6 +28,15 @@ label {
 }
 .inputText-fullWidth {
   width: 100%;
+}
+.inputText-fName {
+  width: 120px;
+}
+.inputText-lName {
+  width: 120px;
+}
+.inputText-email {
+
 }
 .inputText:focus {
   border-color: #4A90E2;
@@ -55,13 +64,18 @@ label {
   line-height: normal;
 	height: 220px;
 }
-.inputTextarea-fullWidth {
-  width: 100%;
-}
 .inputTextarea:focus {
   border-color: #4A90E2;
   outline: none;
 }
+
+.inputTextarea-fullWidth {
+  width: 100%;
+}
+
+
+
+
 input[type="text"], input[type="email"], input[type="tel"], textarea {}
 input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {}
 textarea {}

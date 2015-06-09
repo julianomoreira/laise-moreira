@@ -1,11 +1,16 @@
 body {
   font-size: 100%;
-  font-family: $adelle-sans;
+  font-family: $source-sans;
 }
 .l-container {
   border: 1px solid #c1c1c1;
+  border-top: none;
   padding: 0 0 0;
   margin-bottom: 1rem;
+  max-width: 70em;
+}
+.row {
+  max-width: 70em;
 }
 .header {
   border-top: 4px solid #818452;
@@ -16,6 +21,14 @@ body {
   float: left;
   margin: 10px 0 0 15px;
   padding: 0;
+  @include transform(translateY(-50px));
+  @include transition(all, .1s, ease-in-out, .45s);
+}
+.animated {
+  .logo {
+    @include transform(translateY(0px));
+  }
+
 }
 .phone {
   float: right;
@@ -23,6 +36,8 @@ body {
   line-height: 40px;
   margin: 10px 10px 0 0;
   padding: 0;
+  @include transform(translateY(-50px));
+  @include transition(transform, .3s, ease-in-out, .5s);
   > a:link {
     color: #5E6985;
     font-weight: bold;
@@ -32,15 +47,35 @@ body {
     text-decoration: underline;
   }
 }
-
+.animated {
+  .phone {
+    @include transform(translateY(0px));
+  }
+}
 .header-btn {
   float: right;
   margin: 8px 10px 0 0;
+  @include transform(translateY(-50px));
+  @include transition(transform, .15s, ease-in-out, .75s);
+}
+.animated {
+  .header-btn {
+    @include transform(translateY(0px));
+  }
 }
 .heroBox {
   width: 100%;
-  height: 606px;
+  height: 460px;
   max-height: 606px;
+  @media only screen and (max-width: 40em) {
+    height: 300px;
+    max-height: 300px;
+  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+  @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    height: 300px;
+    max-height: 300px;
+  } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 }
 .hero {
   width: 100%;
@@ -55,56 +90,163 @@ body {
   padding: 40px;
 }
 .introMessage {
-  font-size: 72px;
-  line-height: 90px;
-  font-weight: bold;
+  font: 700 82px/96px $freight-display;
   color: #fff;
   text-align: center;
+  @media only screen and (max-width: 40em) {
+    font-size: 30px;
+    line-height: 40px;
+  } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+  @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    font-size: 50px;
+    line-height: 60px;
+  } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
 }
 .learnMore {
   font: normal 28px $kepler;
   color: #fff;
   text-align: center;
+  opacity: 0;
+  @include transform(translateY(-10px));
+  @include transition(all, .2s, ease-in-out, .5s);
+  .fa {
+    display: block;
+  }
+}
+.animated2nd {
+  .learnMore {
+    @include transform(translateY(0px));
+    opacity: 1;
+  }
 }
 .newsletter {
   max-width: 60%;
   margin: 0 auto;
-  padding: 0 0 1em 0;
+  padding: 0 0 2em 0;
   > p {
     text-align: center;
-    font-size: em(18);
+    font-size: em(22);
     color: #4A4A4A;
+    font-weight: 300;
   }
 }
 .newsletter--signup {
-  width: 93%;
+  width: 85%;
   margin: 0 auto;
+  .inputText:focus {
+    border-color: $purple;
+  }
 }
+
+
+// Featured images
+
+.featuredImgLaise {
+  background: url(../images/laise-picture.jpg) no-repeat center center;
+}
+.featuredImg-one {
+  background: url(../images/featuredImg-grapes-caxos.jpg) no-repeat center center;
+}
+.featuredImg-two {
+  background: url(../images/featuredImg-cereal-bowl.jpg) no-repeat center center;
+}
+.featuredImgLaise {
+  overflow: hidden;
+}
+.featuredImgLaise--signature {
+  position: absolute;
+  top: 270px;
+  left:0%;
+  padding: 15px 0 0 15px;
+  height: 70px;
+  width: 100%;
+  background-color: rgba(255,255,255,.5);
+  h3 {
+    font-family: $kepler;
+    font-weight: normal;
+    font-size: em(18);
+    line-height: 20px;
+    margin: 0;
+  }
+  p {
+    font-size: em(14);
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+  //@include transition(position, .5s, ease-in-out);
+  @include transition-property(top, left);
+  @include transition-duration(.25s);
+  @include transition-timing-function(ease-in-out);
+}
+.featuredImgLaise:hover {
+  .featuredImgLaise--signature {
+    top: 35px;
+    left: 90px;
+    width: 70%;
+    height: 80%;
+    padding: 30px;
+    background-color: rgba(255,255,255,.85);
+  }
+}
+
+.featuredImg {
+  height: 338px;
+  position: relative;
+  background-size: 100% 100%;
+  @include transition-property(background);
+  @include transition-duration(.5s);
+  @include transition-timing-function(ease);
+}
+.featuredImgBox {
+  background-color: rgba(94,105,133,.9);
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  @include transform(scale(.85));
+  @include transition-property(transform);
+  @include transition-duration(.5s);
+  @include transition-timing-function(ease);
+}
+.featuredImgBox--text {
+  color: #fff;
+}
+.featuredImg:hover {
+  background-size: 120% 120%;
+  .featuredImgBox {
+    opacity: 1;
+  }
+}
+
+
 .laiseText {
   background-color: #7D7F18;
-  height: 338px;
   padding: 40px;
   h3 {
     color: #fff;
+    font-family: $freight-display;
+    font-weight: normal;
+    font-size: em(24);
+    line-height: 26px;
   }
   p {
     color: #fff;
   }
 }
-.laisePicture {
-  background-color: #252E4A;
-  height: 338px;
-  background: url(../images/laise-picture.jpg) no-repeat 0 0;
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-}
+
+
 .helpYouPara {
-  font: normal 24px $kepler;
+  font: 200 24px/30px $source-sans;
   text-align: center;
   color: #4A4A4A;
   padding: 1rem 2rem;
+  width: 80%;
+  margin: 0 auto;
 }
 .myBusinessStory {
   background-color: $purple;
@@ -112,15 +254,18 @@ body {
   > h3 {
     color: #fff;
     text-align: center;
-    font-size: em(30);
+    font-family: $freight-display;
+    font-size: em(40);
+    font-weight: 700;
     margin: .5rem 0;
     padding: 0;
+
   }
 }
 .myBusinessStory--text {
   color: #fff;
-  font-size: em(14);
-  line-height: 23px;
+  font-size: em(18);
+  line-height: 24px;
 }
 .howIcanHelpUrBusiness {
   background-color: $light-purple;
@@ -128,15 +273,17 @@ body {
   > h3 {
     color: $gray-body-text;
     text-align: center;
-    font-size: em(30);
+    font-family: $freight-display;
+    font-size: em(40);
+    font-weight: 700;
     margin: .5rem 0;
     padding: 0;
   }
 }
 .howIcanHelpUrBusiness--text {
   color: $gray-body-text;
-  font-size: em(14);
-  line-height: 23px;
+  font-size: em(18);
+  line-height: 24px;
 }
 .bizLogos {
   margin: 0;
@@ -145,7 +292,9 @@ body {
 .bizLogos > h3 {
   color: $gray-body-text;
   text-align: center;
-  font-size: em(30);
+  font-family: $freight-display;
+  font-size: em(40);
+  font-weight: 700;
   margin: 1.5rem 0;
   padding: 0;
 }
@@ -166,7 +315,9 @@ body {
   > h3 {
     color: #fff;
     text-align: center;
-    font-size: em(30);
+    font-family: $freight-display;
+    font-size: em(40);
+    font-weight: 700;
     margin: .5rem 0;
     padding: 0;
   }
@@ -179,7 +330,7 @@ body {
 
 // Overlay Contact Form
 .overlayBackground {
-  background-color: rgba(0,0,0,.75);
+  background-color: rgba(52,62,92,.95);
   position: fixed;
   top: 0;
   left: 0;
@@ -188,7 +339,9 @@ body {
   z-index: 1;
 	opacity: 0;
 	visibility: hidden;
-  @include transition(all .25s ease-in-out 0s);
+  @include transition-property(opacity);
+  @include transition-duration(.25s);
+  @include transition-timing-function(ease);
 }
 .overlayContactForm {
   width: 60%;
@@ -204,7 +357,14 @@ body {
   //box-shadow: 0px 0px 1rem rgba(0,0,0,.5)
   /* z-index: 10; */
   @include transform(translateY(-20px));
-  @include transition(transform .15s ease-in-out 0s, opacity .15s ease-in-out 0s, visibility .15s ease-in-out 0s);
+  @include transition-property(transform);
+  @include transition-duration(.25s);
+  @include transition-timing-function(ease-in-out);
+
+  @media only screen and (max-width: 40.063em) {
+    width: 90%;
+    margin-left: -45%;
+  } /* max-width 641px, medium screens */
 }
 .overlay-is-visible {
   visibility: visible;
@@ -213,7 +373,6 @@ body {
     opacity: 1;
     visibility: visible;
     @include transform(translateY(0px));
-  /* @include transition(transform .25s ease-in-out 0s, opacity .25s ease-in-out 0s); */
   }
 
 }
@@ -222,6 +381,11 @@ body {
   margin: 1rem auto;
   font-weight: normal;
   text-align: center;
+  color: #818452;
+  font-family: $freight-display;
+  font-size: em(24);
+  line-height: 28px;
+  font-weight: 300;
 }
 .icon-close-x {
   display: inline-block;
@@ -229,6 +393,7 @@ body {
   top: 15px;
   right: 15px;
   cursor: pointer;
+  color: $purple;
 }
 .formText {
   margin: 0;
@@ -241,6 +406,8 @@ body {
   display: block;
   margin: 0;
   margin: 0 0 .25rem 0;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 .formText--textBox {
   width: 50%;
@@ -249,6 +416,10 @@ body {
   /* border: 1px solid red; */
   padding: 0 .5rem;
   margin: 0 0 1rem 0;
+  @media only screen and (max-width: 40.063em) {
+    width: 100%;
+    float: none;
+  } /* max-width 641px, medium screens */
 }
 .formText--textarea {
   padding: 0 .5rem;
