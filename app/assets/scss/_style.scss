@@ -217,8 +217,7 @@ body {
 .featuredImgBox--text {
   color: #fff;
 }
-.featuredImg:hover {
-  background-size: 120% 120%;
+.featuredImg:hover, .featuredImg:focus {  
   .featuredImgBox {
     opacity: 1;
   }
