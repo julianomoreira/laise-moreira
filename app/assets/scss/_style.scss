@@ -142,26 +142,21 @@ body {
 
 // Featured images
 
-.featuredImgLaise {
-  background: url(../images/laise-picture.jpg) no-repeat center center;
-}
-.featuredImg-one {
-  background: url(../images/featuredImg-grapes-caxos.jpg) no-repeat center center;
-}
-.featuredImg-two {
-  background: url(../images/featuredImg-cereal-bowl.jpg) no-repeat center center;
-}
-.featuredImgLaise {
-  overflow: hidden;
+.featuredTxtBox--text {
+  //background-color: rgba(255,255,255,.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8%;
 }
 .featuredImgLaise--signature {
   position: absolute;
-  top: 270px;
+  bottom:-1px;
+  padding: 2% 0 2% 2%;
   left:0%;
-  padding: 15px 0 0 15px;
   height: 70px;
   width: 100%;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255,255,255,.75);
   h3 {
     font-family: $kepler;
     font-weight: normal;
@@ -175,44 +170,50 @@ body {
     margin: 0;
     padding: 0;
   }
-  //@include transition(position, .5s, ease-in-out);
-  @include transition-property(top, left);
+  @include transition(all, .5s, ease-in-out);
+  /* @include transition-property(top, left);
   @include transition-duration(.25s);
-  @include transition-timing-function(ease-in-out);
+  @include transition-timing-function(ease-in-out); */
 }
 .featuredImgLaise:hover {
   .featuredImgLaise--signature {
-    top: 35px;
-    left: 90px;
-    width: 70%;
+    bottom:10%;
+    left:0%;
+    margin: 10% 0 0 10%;
+    width: 80%;
     height: 80%;
-    padding: 30px;
     background-color: rgba(255,255,255,.85);
   }
 }
 
 .featuredImg {
-  height: 338px;
+  padding: 0;
   position: relative;
   background-size: 100% 100%;
-  @include transition-property(background);
+  @include transition(all, .5s, ease);
+  /* @include transition-property(background);
   @include transition-duration(.5s);
-  @include transition-timing-function(ease);
+  @include transition-timing-function(ease); */
+}
+.featuredImgBox > div {
+  background-color: rgba(94,105,133,.9);
+  padding: 8% 10% 6% 10%;
 }
 .featuredImgBox {
-  background-color: rgba(94,105,133,.9);
-  padding: 1rem 2rem;
+  padding: 10%;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  @include transform(scale(.85));
+  @include transition(all, .5s, ease);
+  /* @include transform(scale(.85));
   @include transition-property(transform);
   @include transition-duration(.5s);
-  @include transition-timing-function(ease);
+  @include transition-timing-function(ease); */
 }
+
 .featuredImgBox--text {
   color: #fff;
 }
@@ -221,12 +222,24 @@ body {
   .featuredImgBox {
     opacity: 1;
   }
+  .featureBoxTitle {
+    opacity: 0;
+  }
 }
 
+.featureBoxTitle {
+  position: absolute;
+  padding: 10%;
+  font: italic 68px $freight-display;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 1px 1px rgba(0,0,0,.5);
+}
 
 .laiseText {
   background-color: #7D7F18;
-  padding: 40px;
+  //padding: 40px;
   h3 {
     color: #fff;
     font-family: $freight-display;

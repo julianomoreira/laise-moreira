@@ -1,0 +1,100 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<style>
+.formText {
+  list-style: none;
+}
+</style>
+</head>
+
+
+<script>
+// prepare the form when the DOM is ready
+$(document).ready(function() {
+    // bind form using ajaxForm
+    $('#contact-form').ajaxForm({
+        // target identifies the element(s) to update with the server response
+        target: '#success',
+
+        // success identifies the function to invoke when the server response
+        // has been received; here we apply a fade-in effect to the new content
+        success: function() {
+            $('#success').fadeIn('slow');
+        }
+    });
+});
+</script>
+
+<h3>Contact Us</h3>
+<div id="contact">
+<p>
+    To send us a message, please fill out the form below.
+    We’ll get back to you shortly!
+</p>
+
+{exp:freeform:form
+    form:id="contact-form"
+    form_name="contact_me"
+    return="ajax/success"
+    required="name|email"
+}
+<ul class="formText clearfix">
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:first_name}</label>
+{freeform:field:first_name attr:class="inputText inputText-fullWidth"}
+{if freeform:error:first_name}
+    <strong class="inputError">{freeform:error:first_name}</strong>
+{/if}
+</li>
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:last_name}</label>
+{freeform:field:last_name attr:class="inputText inputText-fullWidth"}
+{if freeform:error:last_name}
+    <strong class="inputError">{freeform:error:last_name}</strong>
+{/if}
+</li>
+
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:email}</label>
+{freeform:field:email attr:class="inputText inputText-fullWidth"}
+{if freeform:error:email}
+    <strong class="inputError">{freeform:error:email}</strong>
+{/if}
+</li>
+
+
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:company}</label>
+{freeform:field:company attr:class="inputText inputText-fullWidth"}
+{if freeform:error:company}
+    <strong class="inputError">{freeform:error:company}</strong>
+{/if}
+</li>
+
+<li class="formText--textarea">
+<label class="textLabel">{freeform:label:user_message}</label>
+{freeform:field:user_message attr:class="inputTextarea inputTextarea-fullWidth"}
+{if freeform:error:user_message}
+    <strong class="inputError">{freeform:error:user_message}</strong>
+{/if}
+</li>
+
+<li class="formText--button">{freeform:submit attr:class="btn btn-purple btn-form"}</li>
+</ul>
+
+    {if freeform:no_results}
+        <p>
+            Specified form was not found. Please make sure you have
+            specified the correct short name of the form in the
+            <b>form_name</b> parameter.
+        </p>
+    {/if}
+{/exp:freeform:form}
+</div>
+<div id="success"></div>
+
+
+</body>
+</html>
