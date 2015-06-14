@@ -173,6 +173,7 @@ body {
   top: 0;
   left: 0;
   padding: 4%;
+  overflow: hidden;
 }
 .featuredImgLaise--signature {
   position: absolute;
@@ -269,10 +270,16 @@ body {
     font-family: $freight-display;
     font-weight: normal;
     font-size: em(24);
-    line-height: 26px;
+    line-height: 1.2em;
+    @media only screen and (max-width: 40em) {
+
+    }
   }
   p {
     color: #fff;
+    @media only screen and (max-width: 60em) {
+      font-size: em(14);
+    }
   }
 }
 
@@ -284,6 +291,9 @@ body {
   padding: 1rem 2rem;
   width: 80%;
   margin: 0 auto;
+  @media only screen and (max-width: 60em){
+    width: 100%;
+  }
 }
 .myBusinessStory {
   background-color: $purple;
@@ -293,6 +303,7 @@ body {
     text-align: center;
     font-family: $freight-display;
     font-size: em(40);
+    line-height: 1.1em;
     font-weight: 700;
     margin: .5rem 0;
     padding: 0;
@@ -312,7 +323,7 @@ body {
     text-align: center;
     font-family: $freight-display;
     font-size: em(40);
-    line-height: 44px;
+    line-height: 1.1em;
     font-weight: 700;
     margin: .5rem 0;
     padding: 0;
@@ -332,7 +343,7 @@ body {
   text-align: center;
   font-family: $freight-display;
   font-size: em(40);
-  line-height: 44px;
+  line-height: 1.1em;
   font-weight: 700;
   margin: 1.5rem 0;
   padding: 0;
