@@ -1,0 +1,86 @@
+{embed="includes/html_header"}
+
+<div class="l-container">
+
+<div class="row">
+<div class="header clearfix">
+  <a href="{site_url}"><h1 class="icon-logo-vitti logo" style="width: 200px; height: 36px;" ></h1></a>
+  <a href="{site_url}" class="btn btn-outline btn-outline-green header-btn overlay-trigger">back to homepage</a>
+  <p class="phone"><span class="icon-icon-phone" style="width: 24px; height: 21px; display: inline-block; vertical-align: -5px;" ></span> <a href="tel:+13174562564">612.222.2324</a></p>
+</div>
+</div>
+
+<div id="contact">
+
+<h3 class="formTitle">Hello! Thanks for taking the time to contact to me!
+Fill out the fields below and hit submit. I'll respond to you as soon as I can. </h3>
+
+{exp:freeform:form
+    form:id="contact-form"
+    form_name="contact_form"
+    return="ajax/success"
+    inline_errors="yes"
+    required="email"
+    admin_notify="laise79@gmail.com"
+    user_notification_template="contact_form"    
+}
+<ul class="formText clearfix">
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:first_name}</label>
+{freeform:field:first_name attr:class="inputText inputText-fullWidth"}
+{if freeform:error:first_name}
+    <strong class="inputError">{freeform:error:first_name}</strong>
+{/if}
+</li>
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:last_name}</label>
+{freeform:field:last_name attr:class="inputText inputText-fullWidth"}
+{if freeform:error:last_name}
+    <strong class="inputError">{freeform:error:last_name}</strong>
+{/if}
+</li>
+
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:email}</label>
+{freeform:field:email attr:class="inputText inputText-fullWidth"}
+{if freeform:error:email}
+    <strong class="inputError">{freeform:error:email}</strong>
+{/if}
+</li>
+
+
+<li class="formText--textBox">
+<label class="textLabel">{freeform:label:company}</label>
+{freeform:field:company attr:class="inputText inputText-fullWidth"}
+{if freeform:error:company}
+    <strong class="inputError">{freeform:error:company}</strong>
+{/if}
+</li>
+
+<li class="formText--textarea">
+<label class="textLabel">{freeform:label:user_message}</label>
+{freeform:field:user_message attr:class="inputTextarea inputTextarea-fullWidth"}
+{if freeform:error:user_message}
+    <strong class="inputError">{freeform:error:user_message}</strong>
+{/if}
+</li>
+
+<li class="formText--button">{freeform:submit attr:class="btn btn-purple btn-form"}</li>
+</ul>
+
+    {if freeform:no_results}
+        <p>
+            Specified form was not found. Please make sure you have
+            specified the correct short name of the form in the
+            <b>form_name</b> parameter.
+        </p>
+    {/if}
+{/exp:freeform:form}
+</div>
+<div id="success"></div>
+
+</div> <!-- end container -->
+
+
+</body>
+</html>
